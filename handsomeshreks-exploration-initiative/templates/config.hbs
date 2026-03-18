@@ -1,0 +1,41 @@
+<form>
+  <div class="form-group">
+    <label>Turn Time (seconds)</label>
+    <input type="number" name="turnTime" value="{{turnTime}}" min="5" step="1" />
+    <p class="notes">How long an exploration turn lasts after Start Turn is pressed.</p>
+  </div>
+
+  <div class="form-group">
+    <label>Exploration Mode</label>
+    <select name="explorationMode">
+      <option value="initiative" {{#if (eq explorationMode "initiative")}}selected{{/if}}>Initiative Turns</option>
+      <option value="simultaneous" {{#if (eq explorationMode "simultaneous")}}selected{{/if}}>Simultaneous Movement</option>
+    </select>
+    <p class="notes">Initiative Turns uses one active token at a time. Simultaneous Movement lets all players move together with a per-token movement cap.</p>
+  </div>
+
+  <div class="form-group">
+    <label>Movement Multiplier</label>
+    <input type="number" name="movementMultiplier" value="{{movementMultiplier}}" min="0.1" step="0.1" />
+    <p class="notes">Multiplier for movement cap in simultaneous mode (default 1.5).</p>
+  </div>
+
+  <div class="form-group">
+    <label>Separation Distance (feet)</label>
+    <input type="number" name="separationDistance" value="{{separationDistance}}" min="5" step="5" />
+    <p class="notes">Distance from nearest ally used to determine isolation when combat starts.</p>
+  </div>
+
+  <div class="form-group">
+    <label>Disable Combat Isolation Disadvantage</label>
+    <input type="checkbox" name="disableCombatDisadvantage" {{checked disableCombatDisadvantage}} />
+    <p class="notes">Turns off the combat isolation disadvantage behavior.</p>
+  </div>
+
+  <div class="form-group">
+    <button type="submit">
+      <i class="fas fa-save"></i> Save
+    </button>
+  </div>
+</form>
+

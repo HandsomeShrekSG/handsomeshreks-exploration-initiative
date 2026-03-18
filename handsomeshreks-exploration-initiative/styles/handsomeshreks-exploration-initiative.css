@@ -1,0 +1,293 @@
+.hs-tracker-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.hs-tab-btn {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #666;
+  border-radius: 6px;
+}
+
+.hs-tab-btn.active {
+  font-weight: 700;
+}
+
+.hs-exploration-container {
+  margin-bottom: 8px;
+}
+
+.hs-exp-toolbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin: 0 6px 8px;
+}
+
+.hs-exp-toolbar button {
+  padding: 3px 6px;
+  font-size: 12px;
+  line-height: 1.2;
+  min-height: 24px;
+}
+
+.hs-exp-list {
+  list-style: none;
+  padding: 0 6px;
+  margin: 0;
+}
+
+.hs-exp-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border: 1px solid #666;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.hs-exp-row.active {
+  border-color: #ff9829;
+  box-shadow: 0 0 0 1px rgba(255, 152, 41, 0.85), 0 0 10px rgba(255, 152, 41, 0.25);
+  background: rgba(255, 152, 41, 0.08);
+}
+
+.hs-exp-row.selected {
+  border-color: #ff9829;
+  box-shadow: 0 0 0 1px rgba(255, 152, 41, 0.65), 0 0 8px rgba(255, 152, 41, 0.18);
+  background: rgba(255, 152, 41, 0.06);
+}
+
+.hs-exploration-container {
+  display: block;
+}
+
+/* Hide native combat tracker controls while exploration view is active. */
+.hs-show-exploration #combat-controls,
+.hs-show-exploration .combat-controls,
+.hs-show-exploration .encounter-controls,
+.hs-show-exploration .combatants,
+.hs-show-exploration #combat-tracker,
+.hs-show-exploration ol.combat-tracker,
+.hs-show-exploration ol.directory-list,
+.hs-show-exploration .directory-list {
+  display: none !important;
+}
+
+/* Hide encounter header widgets (+, encounter index, settings) in exploration mode. */
+.hs-show-exploration .combat-tracker-header .encounter-controls,
+.hs-show-exploration .combat-tracker-header .encounter-control,
+.hs-show-exploration .combat-tracker-header .encounter-nav,
+.hs-show-exploration .combat-tracker-header .encounter-navigation,
+.hs-show-exploration .combat-tracker-header .encounter-title,
+.hs-show-exploration .combat-tracker-header .encounter-name,
+.hs-show-exploration .combat-tracker-header [data-action="createCombat"],
+.hs-show-exploration .combat-tracker-header [data-action="cycleCombat"],
+.hs-show-exploration .combat-tracker-header [data-action="combatCycle"],
+.hs-show-exploration .combat-tracker-header [data-action="trackerSettings"],
+.hs-show-exploration .combat-tracker-header [data-action="combatSettings"] {
+  display: none !important;
+}
+
+.hs-show-exploration .combat-tracker-header .fa-plus,
+.hs-show-exploration .combat-tracker-header .fa-cog,
+.hs-show-exploration .combat-tracker-header .fa-gear {
+  display: none !important;
+}
+
+.hs-exp-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hs-exp-roll {
+  padding: 2px 6px;
+  min-height: 22px;
+  line-height: 1;
+}
+
+
+.hs-exp-timer {
+  font-family: monospace;
+  letter-spacing: 0.04em;
+}
+
+.hs-exp-timer.expired {
+  color: #d33;
+  font-weight: 700;
+}
+
+.hs-start-turn-timer {
+  margin-top: 4px;
+  padding: 3px 8px;
+  min-height: 24px;
+}
+
+.hs-exp-turn-controls {
+  margin: 10px 8px 4px;
+  padding: 10px;
+  border: 1px solid #666;
+  border-radius: 6px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hs-exp-turn-primary {
+  display: flex;
+  width: 100%;
+}
+
+.hs-exp-turn-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.hs-exp-turn-secondary .hs-start-turn-timer {
+  width: 100%;
+}
+
+.hs-exp-turn-secondary [data-action="hs-reset-selected-move"] {
+  grid-column: 1 / -1;
+}
+
+.hs-exp-turn-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.hs-exp-timer-box {
+  border: 1px solid #666;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 0 auto 8px;
+  max-width: 180px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hs-exp-timer {
+  display: inline-block;
+  font-family: monospace;
+  letter-spacing: 0.06em;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.hs-start-turn-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  margin-top: 2px;
+  padding: 4px 10px;
+  min-height: 26px;
+}
+
+.hs-start-turn-timer.disabled,
+.hs-start-turn-timer:disabled {
+  opacity: 0.45;
+  filter: grayscale(0.2);
+  cursor: not-allowed;
+}
+
+
+
+.hs-exp-row.done {
+  opacity: 0.6;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hs-exp-row.done .hs-exp-name,
+.hs-exp-row.done .hs-exp-init {
+  color: #999;
+}
+
+.hs-live-move-hud {
+  position: fixed;
+  left: 50%;
+  top: 14px;
+  transform: translateX(-50%);
+  z-index: 10000;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  min-width: 280px;
+  max-width: 360px;
+  padding: 8px 9px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  background: rgba(20, 20, 20, 0.9);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
+.hs-live-move-info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hs-live-move-title {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hs-live-move-value {
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hs-live-move-sub {
+  margin-top: 2px;
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.hs-live-move-done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-width: 108px;
+  min-height: 44px;
+  margin: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  transition: border-color 120ms ease, box-shadow 120ms ease, color 120ms ease;
+}
+
+.hs-live-move-done:hover:not(:disabled),
+.hs-live-move-done:focus-visible:not(:disabled) {
+  border-color: #ff9829;
+  box-shadow: 0 0 0 1px rgba(255, 152, 41, 0.85), 0 0 10px rgba(255, 152, 41, 0.2);
+  color: #ff9829;
+  outline: none;
+}
+
+.hs-live-move-done:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+
